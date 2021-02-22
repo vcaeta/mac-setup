@@ -1,8 +1,13 @@
 ---
 homebrew_packages:
+  - ack
   - docker
+  - fzf
+  - git
   - jq
   - gnupg
+  - tree
+  - zsh
 
 homebrew_cask_packages:
   - alfred
