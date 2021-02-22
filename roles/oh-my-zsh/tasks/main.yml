@@ -1,0 +1,14 @@
+---
+  - name: Make sure oh-my-zsh is installed
+    stat:
+      path: "{{ ansible_env.HOME }}/.oh-my-zsh"
+    register: "is_ohmyzsh_installed"
+  - name: Installing oh-my-zsh
+    command: '/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    when: >
+          not is_ohmyzsh_installed.stat.exists
+  - name: Configure zsh profile
+    copy:
+      force: true
+      src: zshrc
+      dest: "{{ ansible_env.HOME }}/.zshrc"
