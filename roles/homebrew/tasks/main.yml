@@ -1,0 +1,21 @@
+---
+  - name: Make sure homebrew is installed
+    stat:
+      path: "/usr/local/bin/brew"
+    register: "is_homebrew_installed"
+  - name: Installing Homebrew
+    command: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    when: >
+          not is_homebrew_installed.stat.exists
+  - name: Installing Homebrew packages
+    homebrew:
+      name: "{{ homebrew_packages }}"
+      state: present
+  - name: Installing Homebrew Cask 
+    homebrew: 
+      name: cask
+      state: present
+  - name: Installing Homebrew Cask packages
+    homebrew_cask:
+      name: "{{ homebrew_cask_packages }}"
+      state: present

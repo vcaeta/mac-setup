@@ -1,0 +1,20 @@
+---
+homebrew_packages:
+  - docker
+  - jq
+  - gnupg
+
+homebrew_cask_packages:
+  - alfred
+  - discord
+  - docker
+  - drawio  
+  - iterm2
+  - jetbrains-toolbox
+  - postman
+  - rectangle
+  - slack
+  - spotify  
+  - tg-pro
+  - visual-studio-code
+  - zoom
