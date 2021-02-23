@@ -1,0 +1,13 @@
+---
+  - name: Configure global .gitignore
+    blockinfile:
+      marker: "# {mark} ANSIBLE MANAGED BLOCK - Configure Git Ignore"
+      path: "{{ansible_env.HOME}}/.gitignore_global"
+      block: "{{ lookup('file', 'global_gitignore') }}"
+      create: yes
+  - name: Configure .gitconfig
+    blockinfile:
+      marker: "# {mark} ANSIBLE MANAGED BLOCK - Configure Git"
+      path: "{{ansible_env.HOME}}/.gitconfig"
+      block: "{{ lookup('template', 'git_config') }}"
+      create: yes

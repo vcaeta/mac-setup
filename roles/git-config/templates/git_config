@@ -1,0 +1,15 @@
+[alias]
+	c = checkout
+	s = status -s
+	b = branch
+	l = log --oneline
+	list-versions = "for-each-ref --sort=creatordate --format '%(refname)' refs/tags"
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
+[user]
+	name = {{ git_user_name }}
+	email = {{ git_user_email }}
+[core]
+	excludesfile = {{ ansible_env.HOME }}/.gitignore
