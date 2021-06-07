@@ -16,6 +16,7 @@ homebrew_cask_packages:
   - drawio  
   - iterm2
   - jetbrains-toolbox
+  - kindle
   - postman
   - rectangle
   - slack
