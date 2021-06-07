@@ -10,8 +10,6 @@ homebrew_packages:
   - zsh
 
 homebrew_cask_packages:
-  - alfred
-  - discord
   - docker
   - drawio  
   - iterm2
