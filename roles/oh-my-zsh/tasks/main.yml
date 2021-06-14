@@ -4,7 +4,7 @@
       path: "{{ ansible_env.HOME }}/.oh-my-zsh"
     register: "is_ohmyzsh_installed"
   - name: Installing oh-my-zsh
-    command: '/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    script: install_ohmyzsh.sh
     when: >
           not is_ohmyzsh_installed.stat.exists
   - name: Configure zsh profile
