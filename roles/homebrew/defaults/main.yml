@@ -8,6 +8,7 @@ homebrew_packages:
   - gnupg
   - tree
   - zsh
+  - zsh-syntax-highlighting
 
 homebrew_cask_packages:
   - docker
